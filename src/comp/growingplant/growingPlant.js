@@ -3,15 +3,17 @@ import './GrowingPlant.scss'
 
 function GrowingPlant() {
 
-  const planstyle = {
-    color: 'red'
+  const plantData = {
+    name : 'Rose',
+    color: 'red',
+    backgroundColor: 'green',
+    icon : '🌹',
+    size : 30
   }
 
   return (
     <div >
-      <div className='plant1'>growingPlant</div>
-      <div style={planstyle}>plant 2</div>
-      <div style={{color: 'blue'}}>plant 3</div>
+      <h1>I'm {plantData.name} <span style={{fontSize:  `${plantData.size}`,backgroundColor: `${plantData.backgroundColor}`}}>{plantData.icon}</span></h1>
     </div>
   )
 }

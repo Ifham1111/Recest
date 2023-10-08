@@ -4,7 +4,7 @@ import GrowingPlant from '../growingplant/growingPlant'
 function Home() {
   return (
     <div>
-        <h1>home</h1>
+        <h1>My personal info</h1>
         <GrowingPlant />
     </div>
   )
