@@ -10,7 +10,13 @@ function Home() {
     color: 'red',
     backgroundColor: 'green',
     icon : '🌹',
-    size : 30
+    size : 30,
+    aboutMe: [
+      'I am a rose',
+      'I am red in color',
+      'I am very thorny',
+      'I am a happy flower'
+    ]
   }
 
   const plantData2 = {
@@ -18,7 +24,13 @@ function Home() {
     color: 'Yellow',
     backgroundColor: 'green',
     icon : '🌻',
-    size : 30
+    size : 30,
+    aboutMe: [
+      'I am a sunflower',
+      'I am yellow in color',
+      'I am very tall',
+      'I am a happy flower'
+    ]
   }
 
   return (
