@@ -50,6 +50,124 @@
         if you create css file then import it to relevent file and we can create style for it eith in the component then use variable like class then apply it to the relevent html tag use {} for easiest way then className as a style theses are rare to used
     </p>
 
+    <p>
+        props?
+        props are the properties that we can pass to the components and we can use it in the components
+        pass parametre as js
+    </p>
+
+    <p>
+        object destructering 
+        const name = {
+            first: 'tamil',
+            last: 'hackls'
+        }
+        const {first, last} = name;
+        console.log(first, last);
+        explain it
+        1. create an objcet with key value pairs
+        2. create a variable with the same name as the key
+        3. assign the value of the key to the variable
+        4. use the variable
+    </p>
+
+    <p>
+        conditinal rendering 
+        if we want to render the component based on the condition we can use the conditinal rendering
+
+        provev the code snippet
+        if (condition) {
+            return (
+                <div>
+                    <h1>hello</h1>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <h1>goodbye</h1>
+                </div>
+            )
+        }
+    </p>
+
+    <p>
+        key is identify the every(elemts) components for unique id
+    </p>
+
+    <p>
+        According to hooks its use to having on a temp storage for any changes having on dynamic website and idt dont wanto rereder the webiste its normally update in the Ui
+
+        for that 
+        import React, {useState}
+
+        //state use saving real time changes in temp storage and hooks variable cant change that values in relatime therfor we are declaring second variavble for it to ubdate then we can able to use that first created hooks variable
+
+        const [dynamicSize, setdynamicSize] = useState(size);
+        console.log("dynamic Size", dynamicSize);
+      
+        
+        //>>plus point of this using no need to hard code like props.plantData.name like wise
+        const handleClick = () => {
+          console.log("clicked");
+          setdynamicSize(dynamicSize + 2);
+      };
+    </p>
+
+    <p>
+        useEffect ()
+        //useEffect is a hook that allows you to perform side effects in function components. It is similar to componentDidMount and componentDidUpdate in classes. It is called after every render of the component. It is used to perform side effects such as fetching data from an API, updating the DOM, etc. It is also used to perform cleanup operations such as clearing the interval, cancelling subscriptions, etc. It is also called a lifecycle hook. >>chatgpt
+
+        //useEffect
+        //in first parameter we have to give parametere and in second parametre dependancies array when the dependancy array empty it'll run only the first time when the the page load if we are giving the dipendancies then the componetns monitor that dipendancies according to aour condition
+        useEffect( () => {
+          console.log("My code..")
+        }
+        ,[] );
+      
+        useEffect( () => {
+          console.log("dynamicSize" , dynamicSize);
+          if(dynamicSize > 100) {
+            alert("Plant grown sucessfully");
+          }
+        }
+        ,[dynamicSize] );
+
+        and we can code function seperatley and then call in to the useeffect hooks
+    </p>
+
+    <p> these all about the life cycle of react
+
+          //life cycle of react >> (when that all start) mount , unmount, update
+        
+          // when the component is happen defaultly the rturn of the components happen then when we using hoooks specially useEfeect without dependencies thats mean when first time components mount that it is want to happen 
+
+          useEffect(() => {
+            console.log("My code..");
+          }, []);
+        
+          //when the components unmount that time we have to specify the return what should be happening next
+          useEffect(() => {
+            //set timeout, set interval, clear inteerval
+            const interval = setInterval(() => {
+              if(dynamicSize < 100) {
+                setdynamicSize(dynamicSize + 2);
+              }
+            }, 1000);
+            
+            return () => clearInterval(interval);
+        
+          }, [dynamicSize, name]);
+
+          //when the using dependancies that all wnt to be a update
+          useEffect(() => {
+            console.log("dynamicSize", dynamicSize);
+            if (dynamicSize > 100) {
+              alert("Plant grown sucessfully");
+            }
+          }, [dynamicSize]);
+    </p>
+
 
 </body>
 </html>

@@ -25,5 +25,3 @@ function GrowingPlant(props) {
   )
   
 }
-
-export default GrowingPlant
